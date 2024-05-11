@@ -1,0 +1,22 @@
+{
+  "menu": [
+    {
+      "url": "dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard"
+    },
+    {
+      "name": "Akun",
+      "icon": "menu-icon tf-icons bx bx bx-user",
+      "slug": "profile.*",
+      "submenu": [
+        {
+          "url": "profile.edit",
+          "name": "Profil",
+          "slug": "profile.edit"
+        }
+      ]
+    }
+  ]
+}

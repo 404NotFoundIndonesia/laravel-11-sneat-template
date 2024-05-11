@@ -3,7 +3,7 @@
     <div class="app-brand demo">
       <a href="{{ route('welcome') }}" class="app-brand-link">
         <span class="app-brand-logo demo"><img src="{{ asset('404_Black.jpg') }}" alt="404 Not Found Indonesia" width="30" style="border-radius: 150px" srcset=""></span>
-        <span class="app-brand-text menu-text fw-bold ms-2 fs-5">QuadraLearn</span>
+        <span class="app-brand-text menu-text fw-bold ms-2 fs-5">{{ config('app.name') }}</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -14,30 +14,43 @@
     <div class="menu-inner-shadow"></div>
 
     <ul class="menu-inner py-1">
-      <!-- Dashboards -->
-      <li class="menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
-        <a href="{{ route('dashboard') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Basic">Dashboard</div>
-        </a>
-      </li>
+        @foreach ($menuData->menu as $menu)
+            @if (isset($menu->menuHeader))
+                <li class="menu-header small text-uppercase">
+                    <span class="menu-header-text">a{{ __($menu->menuHeader) }}</span>
+                </li>
+            @else
+                <li class="menu-item {{ Route::is($menu->slug) ? 'active open' : '' }}">
+                    <a href="{{ isset($menu->url) ? route($menu->url) : 'javascript:void(0);' }}" class="{{ isset($menu->submenu) ? 'menu-link menu-toggle' : 'menu-link' }}" @if (isset($menu->target) and !empty($menu->target)) target="_blank" @endif>
+                        @isset($menu->icon)
+                            <i class="{{ $menu->icon }}"></i>
+                        @endisset
 
-      <li class="menu-item {{ Route::is('profile.*') ? 'active open' : '' }}">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-dock-top"></i>
-            <div data-i18n="Profil">Profil</div>
-        </a>
-        <ul class="menu-sub">
-            <li class="menu-item {{ Route::is('profile.edit') ? 'active' : '' }}">
-                <a href="{{ route('profile.edit') }}" class="menu-link">
-                    <div data-i18n="Akun">Akun</div>
-                </a>
-            </li>
-        </ul>
-      </li>
+                        <div>{{ isset($menu->name) ? __($menu->name) : '' }}</div>
 
-      
-
-
+                        @isset($menu->badge)
+                            <div class="badge bg-{{ $menu->badge[0] }} rounded-pill ms-auto">{{ $menu->badge[1] }}</div>
+                        @endisset
+                    </a>
+                    @isset($menu->submenu)
+                        <ul class="menu-sub">
+                            @foreach ($menu->submenu as $submenu)
+                                <li class="menu-item {{ Route::is($submenu->slug) ? 'active open' : '' }}">
+                                    <a href="{{ isset($submenu->url) ? route($submenu->url) : 'javascript:void(0)' }}" class="{{ isset($submenu->submenu) ? 'menu-link menu-toggle' : 'menu-link' }}" @if (isset($submenu->target) and !empty($submenu->target)) target="_blank" @endif>
+                                        @if (isset($submenu->icon))
+                                        <i class="{{ $submenu->icon }}"></i>
+                                        @endif
+                                        <div>{{ isset($submenu->name) ? __($submenu->name) : '' }}</div>
+                                        @isset($submenu->badge)
+                                        <div class="badge bg-{{ $submenu->badge[0] }} rounded-pill ms-auto">{{ $submenu->badge[1] }}</div>
+                                        @endisset
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endisset
+                </li>
+            @endif
+        @endforeach
     </ul>
   </aside>
