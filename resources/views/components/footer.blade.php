@@ -5,8 +5,8 @@
         <a href="https://github.com/404NotFoundIndonesia" target="_blank" class="footer-link fw-medium">404 Not Found Indonesia</a>
       </div>
       <div class="d-none d-lg-inline-block">
-        <a href="https://github.com/404NotFoundIndonesia/quadra-learn/blob/main/LICENSE" class="footer-link me-4" target="_blank">License</a>
-        <a href="https://github.com/404NotFoundIndonesia/quadra-learn#get-started" target="_blank" class="footer-link me-4">Documentation</a>
+        <a href="https://github.com/404NotFoundIndonesia/laravel-11-sneat-template/blob/main/LICENSE" class="footer-link me-4" target="_blank">License</a>
+        <a href="https://github.com/404NotFoundIndonesia/laravel-11-sneat-template#get-started" target="_blank" class="footer-link me-4">Documentation</a>
       </div>
     </div>
 </footer>

@@ -11,7 +11,7 @@
             <div class="app-brand justify-content-center">
                 <a href="{{ route('welcome') }}" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo"><img src="{{ asset('404_Black.jpg') }}" alt="404 Not Found Indonesia" width="30" style="border-radius: 150px" srcset=""></span>
-                  <span class="app-brand-text text-body fw-bold fs-3">QuadraLearn</span>
+                  <span class="app-brand-text text-body fw-bold fs-3">{{ config('app.name') }}</span>
                 </a>
             </div>
             <!-- /Logo -->

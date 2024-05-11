@@ -15,11 +15,11 @@
             <li class="nav-item lh-1 me-3">
                 <a
                     class="github-button"
-                    href="https://github.com/404NotFoundIndonesia/quadra-learn"
+                    href="https://github.com/404NotFoundIndonesia/laravel-11-sneat-template"
                     data-icon="octicon-star"
                     data-size="large"
                     data-show-count="true"
-                    aria-label="Star 404NotFoundIndonesia/quadra-learn on GitHub">Star</a>
+                    aria-label="Star 404NotFoundIndonesia/laravel-11-sneat-template on GitHub">Star</a>
             </li>
 
             <!-- User -->
