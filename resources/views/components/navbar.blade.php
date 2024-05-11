@@ -49,7 +49,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                        <a class="dropdown-item" href="{{ route('account.profile.edit') }}">
                             <i class="bx bx-user me-2"></i>
                             <span class="align-middle">Akun</span>
                         </a>

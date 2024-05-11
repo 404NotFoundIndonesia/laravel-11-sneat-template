@@ -9,12 +9,17 @@
     {
       "name": "Akun",
       "icon": "menu-icon tf-icons bx bx bx-user",
-      "slug": "profile.*",
+      "slug": "account.*",
       "submenu": [
         {
-          "url": "profile.edit",
+          "url": "account.profile.edit",
           "name": "Profil",
-          "slug": "profile.edit"
+          "slug": "account.profile.edit"
+        },
+        {
+          "url": "account.password.edit",
+          "name": "Ganti Password",
+          "slug": "account.password.edit"
         }
       ]
     }

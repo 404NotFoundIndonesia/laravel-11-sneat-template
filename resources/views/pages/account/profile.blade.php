@@ -1,22 +1,19 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<h4 class="py-3 mb-4">
-    <span class="text-muted fw-light">Akun /</span> Profil
-</h4>
+<h4 class="py-3 mb-4"><span class="text-muted fw-light">Akun /</span> Profil</h4>
 
   <div class="row">
     <div class="col-md-12">
       <ul class="nav nav-pills flex-column flex-md-row mb-3">
         <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Profil</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{url('pages/account-settings-notifications')}}"><i class="bx bx-bell me-1"></i> Notifications</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{url('pages/account-settings-connections')}}"><i class="bx bx-link-alt me-1"></i> Connections</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('account.password.edit') }}"><i class="bx bx-lock-open-alt me-1"></i> Ganti Password</a></li>
       </ul>
       <div class="card mb-4">
         <h5 class="card-header">Informasi Profil</h5>
         <!-- Account -->
         <div class="card-body">
-          <form id="formAccountSettings" action="{{ route('profile.update') }}" method="POST">
+          <form id="formAccountSettings" action="{{ route('account.profile.update') }}" method="POST">
             @csrf
             @method('patch')
             <div class="row">
@@ -48,7 +45,7 @@
               <p class="mb-0">Sekali akun Anda dihapus, semua yang berkaitan dengan akun Anda akan ikut terhapus. Harap masukkan kata sandi Anda jika ingin benar-benar menghapus akun secara permanen.</p>
             </div>
           </div>
-          <form id="formAccountDeactivation" method="post" action="{{ route('profile.destroy') }}">
+          <form id="formAccountDeactivation" method="post" action="{{ route('account.profile.destroy') }}">
             @csrf
             @method('delete')
             <div class="row">

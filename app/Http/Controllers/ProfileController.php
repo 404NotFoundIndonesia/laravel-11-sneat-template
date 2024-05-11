@@ -34,7 +34,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('notification', ['icon' => 'success', 'title' => 'Profil', 'message' => 'Berhasil memperbarui informasi profil']);
+        return Redirect::route('account.profile.edit')->with('notification', ['icon' => 'success', 'title' => 'Profil', 'message' => 'Berhasil memperbarui informasi profil']);
     }
 
     /**
