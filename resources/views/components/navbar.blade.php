@@ -22,6 +22,22 @@
                     aria-label="Star 404NotFoundIndonesia/laravel-11-sneat-template on GitHub">Star</a>
             </li>
 
+            <!-- Language -->
+            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" title="Language" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="bx bx-globe bx-sm"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="static">
+                    @foreach ($languages as $code => $language)
+                    <li>
+                        <a class="dropdown-item {{ $currentLanguage === $code ? 'active' : '' }}" href="{{ route('account.locale') . '?locale=' . $code }}" data-language="{{ $code }}" data-text-direction="ltr">
+                            <span class="align-middle">{{ $language }}</span>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
+            </li>
+            <!--/ Language -->
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">

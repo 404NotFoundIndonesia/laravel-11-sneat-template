@@ -16,12 +16,11 @@ class Locale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $locale = $request->segment(1);
-        if (!in_array($locale, config('app.available_locales'))) {
-            return redirect()->to('/');
+        $locale = session('locale');
+        if (in_array($locale, array_keys(config('app.available_locales')))) {
+            App::setLocale($locale);
         }
 
-        App::setLocale($locale);
         return $next($request);
     }
 }
