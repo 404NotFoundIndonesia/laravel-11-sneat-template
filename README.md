@@ -14,6 +14,15 @@
 
 This is a Laravel 11 template designed to accelerate web application development by integrating the Sneat dashboard template and Laravel Breeze authentication.
 
+## Available Features
+
+- Authentication (Sign In, Sign Up, Forgot Password, Reset Password)
+- Edit Account
+- Change Password
+- Delete Account
+- Localization (Bahasa Indonesia, English)
+
+
 ## Get Started
 
 ### Get the Source Code
@@ -39,12 +48,7 @@ pwd
 
 To install backend dependencies, use the following command:
 ```shell
-composer install
-```
-
-Use the following command to connect the application to the storage:
-```shell
-php artisan storage:link
+composer setup
 ```
 
 ## Reference
