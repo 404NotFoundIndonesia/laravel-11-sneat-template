@@ -19,6 +19,14 @@ class LoginRequest extends FormRequest
         return true;
     }
 
+    public function attributes(): array
+    {
+        return [
+            'email' => __('field.email'),
+            'password' => __('field.password'),
+        ];
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

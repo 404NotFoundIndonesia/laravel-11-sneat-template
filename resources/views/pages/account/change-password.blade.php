@@ -1,13 +1,13 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<h4 class="py-3 mb-4"><span class="text-muted fw-light">Akun /</span> Ganti Password</h4>
+<h4 class="py-3 mb-4"><span class="text-muted fw-light">{{ __('menu.account') }} /</span> {{ __('menu.change_password') }}</h4>
 
 <div class="row">
     <div class="col-md-12">
         <ul class="nav nav-pills flex-column flex-md-row mb-3">
-          <li class="nav-item"><a class="nav-link" href="{{ route('account.profile.edit') }}"><i class="bx bx-user me-1"></i> Profil</a></li>
-          <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-lock-open-alt me-1"></i> Ganti Password</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('account.profile.edit') }}"><i class="bx bx-user me-1"></i> {{ __('menu.profile') }}</a></li>
+          <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-lock-open-alt me-1"></i> {{ __('menu.change_password') }}</a></li>
         </ul>
         <div class="card mb-4">
             <!-- Account -->
@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="mb-3 form-password-toggle col-md-12">
                           <div class="d-flex justify-content-between">
-                            <label class="form-label" for="current_password">Password Lama</label>
+                            <label class="form-label" for="current_password">{{ __('field.current_password') }}</label>
                           </div>
                           <div class="input-group input-group-merge">
                             <input
@@ -34,7 +34,7 @@
                         </div>
                         <div class="mb-3 form-password-toggle col-md-12">
                           <div class="d-flex justify-content-between">
-                            <label class="form-label" for="password">Password Baru</label>
+                            <label class="form-label" for="password">{{ __('field.password') }}</label>
                           </div>
                           <div class="input-group input-group-merge">
                             <input
@@ -50,7 +50,7 @@
                         </div>
                         <div class="mb-3 form-password-toggle col-md-12">
                           <div class="d-flex justify-content-between">
-                            <label class="form-label" for="password_confirmation">Konfirmasi Password Baru</label>
+                            <label class="form-label" for="password_confirmation">{{ __('field.password_confirmation') }}</label>
                           </div>
                           <div class="input-group input-group-merge">
                             <input
@@ -66,8 +66,8 @@
                         </div>
                     </div>
                     <div class="mt-2">
-                        <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                        <button type="reset" class="btn btn-outline-secondary">Batal</button>
+                      <button type="submit" class="btn btn-primary me-2">{{ __('button.submit') }}</button>
+                      <button type="reset" class="btn btn-outline-secondary">{{ __('button.reset') }}</button>
                     </div>
                 </div>
             </form>

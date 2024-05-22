@@ -1,16 +1,16 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<h4 class="py-3 mb-4"><span class="text-muted fw-light">Akun /</span> Profil</h4>
+<h4 class="py-3 mb-4"><span class="text-muted fw-light">{{ __('menu.account') }} /</span> {{ __('menu.profile') }}</h4>
 
   <div class="row">
     <div class="col-md-12">
       <ul class="nav nav-pills flex-column flex-md-row mb-3">
-        <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Profil</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('account.password.edit') }}"><i class="bx bx-lock-open-alt me-1"></i> Ganti Password</a></li>
+        <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> {{ __('menu.profile') }}</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('account.password.edit') }}"><i class="bx bx-lock-open-alt me-1"></i> {{ __('menu.change_password') }}</a></li>
       </ul>
       <div class="card mb-4">
-        <h5 class="card-header">Informasi Profil</h5>
+        <h5 class="card-header">{{ __('label.profile_information') }}</h5>
         <!-- Account -->
         <div class="card-body">
           <form id="formAccountSettings" action="{{ route('account.profile.update') }}" method="POST">
@@ -18,31 +18,31 @@
             @method('patch')
             <div class="row">
               <div class="mb-3 col-md-6">
-                <label for="name" class="form-label">Nama Lengkap</label>
-                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ old('name', $user->name) }}" autofocus />
+                <label for="name" class="form-label">{{ __('field.name') }}</label>
+                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" value="{{ old('name', $user->name) }}" placeholder="{{ __('label.enter_field', ['field' => __('field.name')]) }}" autofocus />
                 <span class="error invalid-feedback">{{ $errors->first('name') }}</span>
               </div>
               <div class="mb-3 col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value="{{ old('email', $user->email) }}" placeholder="john.doe@example.com" />
+                <label for="email" class="form-label">{{ __('field.email') }}</label>
+                <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value="{{ old('email', $user->email) }}" placeholder="{{ __('label.enter_field', ['field' => __('field.email')]) }}" />
                 <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
               </div>
             </div>
             <div class="mt-2">
-              <button type="submit" class="btn btn-primary me-2">Simpan</button>
-              <button type="reset" class="btn btn-outline-secondary">Batalkan</button>
+              <button type="submit" class="btn btn-primary me-2">{{ __('button.submit') }}</button>
+              <button type="reset" class="btn btn-outline-secondary">{{ __('button.reset') }}</button>
             </div>
           </form>
         </div>
         <!-- /Account -->
       </div>
       <div class="card">
-        <h5 class="card-header">Hapus Akun</h5>
+        <h5 class="card-header">{{ __('label.delete_account') }}</h5>
         <div class="card-body">
           <div class="mb-3 col-12 mb-0">
             <div class="alert alert-warning">
-              <h6 class="alert-heading fw-medium mb-1">Apakah Anda yakin menghapus akun Anda secara permanen?</h6>
-              <p class="mb-0">Sekali akun Anda dihapus, semua yang berkaitan dengan akun Anda akan ikut terhapus. Harap masukkan kata sandi Anda jika ingin benar-benar menghapus akun secara permanen.</p>
+              <h6 class="alert-heading fw-medium mb-1">{{ __('label.are_you_sure_delete_account') }}</h6>
+              <p class="mb-0">{{ __('label.once_your_account_deleted') }}</p>
             </div>
           </div>
           <form id="formAccountDeactivation" method="post" action="{{ route('account.profile.destroy') }}">
@@ -50,7 +50,7 @@
             @method('delete')
             <div class="row">
                 <div class="mb-3 col-md-6 form-password-toggle">
-                  <label class="form-label" for="password">Password</label>
+                  <label class="form-label" for="password">{{ __('field.password') }}</label>
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
@@ -66,9 +66,9 @@
             </div>
             <div class="form-check mb-3">
               <input class="form-check-input" disabled type="checkbox" name="accountActivation" id="accountActivation" />
-              <label class="form-check-label" for="accountActivation">Saya yakin ingin menghapus akun ini</label>
+              <label class="form-check-label" for="accountActivation">{{ __('label.im_sure_delete_account') }}</label>
             </div>
-            <button type="submit" disabled class="btn btn-danger deactivate-account" id="accountActivationButton">Hapus Akun Permanen</button>
+            <button type="submit" disabled class="btn btn-danger deactivate-account" id="accountActivationButton">{{ __('button.delete_permanently') }}</button>
           </form>
         </div>
       </div>

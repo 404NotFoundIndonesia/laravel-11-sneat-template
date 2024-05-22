@@ -16,7 +16,7 @@ class Locale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $locale = session('locale');
+        $locale = $request->user()?->locale ?? session('locale', 'id');
         if (in_array($locale, array_keys(config('app.available_locales')))) {
             App::setLocale($locale);
         }

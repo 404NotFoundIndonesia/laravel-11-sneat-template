@@ -16,8 +16,8 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Lupa Password? 🔒</h4>
-            <p class="mb-4">Masukkan email kamu dan akan kami kirimkan link buat reset password kamu</p>
+            <h4 class="mb-2">{{ __('label.forgot_password') }} 🔒</h4>
+            <p class="mb-4">{{ __('label.enter_your_email_to_reset_password') }}</p>
 
             @session('status')
             <div class="alert alert-success alert-dismissible" role="alert">
@@ -30,19 +30,19 @@
             <form id="formAuthentication" method="POST" class="mb-3" action="{{ route('password.email') }}">
               @csrf
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">{{ __('field.email') }}</label>
                 <input
                     type="text" class="form-control @error('email') is-invalid @enderror"
                     id="email" name="email"
-                    placeholder="Masukkan email" autofocus>
+                    placeholder="{{ __('label.enter_field', ['field' => __('field.email')]) }}" autofocus>
                 <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
               </div>
-              <button class="btn btn-primary d-grid w-100">Kirim Link Reset</button>
+              <button class="btn btn-primary d-grid w-100">{{ __('button.send') }}</button>
             </form>
             <div class="text-center">
               <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
                 <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
-                Masuk
+                {{ __('label.login') }}
               </a>
             </div>
           </div>

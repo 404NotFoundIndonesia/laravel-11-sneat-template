@@ -27,6 +27,5 @@ class AppServiceProvider extends ServiceProvider
         // Share all menuData to all the views
         View::share('menuData', $verticalMenuData);
         View::share('languages', config('app.available_locales'));
-        View::share('currentLanguage', session('locale', App::getLocale()));
     }
 }

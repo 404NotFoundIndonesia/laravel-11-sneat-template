@@ -15,30 +15,30 @@
                 </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Adventure starts here 🚀</h4>
-            <p class="mb-4">Ayo buat akun dan kita mulai perjalanan kita!</p>
+            <h4 class="mb-2">{{ __('label.adventure_start_here') }} </h4>
+            <p class="mb-4">{{ __('label.lets_create_an_account') }}</p>
 
             <form id="formAuthentication" class="mb-3" action="{{ route('register') }}" method="POST">
               @csrf
               <div class="mb-3">
-                <label for="name" class="form-label">Nama</label>
+                <label for="name" class="form-label">{{ __('field.name') }}</label>
                 <input
                   type="text"
                   class="form-control @error('name') is-invalid @enderror"
                   id="name"
                   name="name"
-                  placeholder="Masukkan Nama Lengkap"
+                  placeholder="{{ __('label.enter_field', ['field' => __('field.name')]) }}"
                   value="{{ old('name') }}"
                   autofocus />
                   <span class="error invalid-feedback">{{ $errors->first('name') }}</span>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" placeholder="Masukkan email" />
+                <label for="email" class="form-label">{{ __('field.email') }}</label>
+                <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" placeholder="{{ __('label.enter_field', ['field' => __('field.email')]) }}" />
                 <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
               </div>
               <div class="mb-3 form-password-toggle">
-                <label class="form-label" for="password">Password</label>
+                <label class="form-label" for="password">{{ __('field.password') }}</label>
                 <div class="input-group input-group-merge">
                   <input
                     type="password"
@@ -52,7 +52,7 @@
                 </div>
               </div>
               <div class="mb-3 form-password-toggle">
-                <label class="form-label" for="password_confirmation">Konfirmasi Password</label>
+                <label class="form-label" for="password_confirmation">{{ __('field.password_confirmation') }}</label>
                 <div class="input-group input-group-merge">
                   <input
                     type="password"
@@ -66,13 +66,13 @@
                 </div>
               </div>
 
-              <button class="btn mt-4 btn-primary d-grid w-100" type="submit">Buat Akun</button>
+              <button class="btn mt-4 btn-primary d-grid w-100" type="submit">{{ __('button.register') }}</button>
             </form>
 
             <p class="text-center">
-              <span>Sudah punya akun?</span>
+              <span>{{ __('label.already_have_an_account') }}</span>
               <a href="{{ route('login') }}">
-                <span>Masuk</span>
+                <span>{{ __('label.login') }}</span>
               </a>
             </p>
           </div>

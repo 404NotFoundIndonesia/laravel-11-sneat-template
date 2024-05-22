@@ -30,7 +30,7 @@
                 <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="static">
                     @foreach ($languages as $code => $language)
                     <li>
-                        <a class="dropdown-item {{ $currentLanguage === $code ? 'active' : '' }}" href="{{ route('account.locale') . '?locale=' . $code }}" data-language="{{ $code }}" data-text-direction="ltr">
+                        <a class="dropdown-item {{ auth()->user()->locale === $code ? 'active' : '' }}" href="{{ route('account.locale') . '?locale=' . $code }}" data-language="{{ $code }}" data-text-direction="ltr">
                             <span class="align-middle">{{ $language }}</span>
                         </a>
                     </li>
@@ -67,7 +67,7 @@
                     <li>
                         <a class="dropdown-item" href="{{ route('account.profile.edit') }}">
                             <i class="bx bx-user me-2"></i>
-                            <span class="align-middle">Akun</span>
+                            <span class="align-middle">{{ __('menu.account') }}</span>
                         </a>
                     </li>
                     <li>
@@ -77,7 +77,7 @@
                         <form action="{{ route('logout') }}" method="post" id="logout-menu-form-on-nav">@csrf</form>
                         <a class="dropdown-item" href="javascript:void(0);" id="logout-menu-button-on-nav">
                             <i class="bx bx-power-off me-2"></i>
-                            <span class="align-middle">Keluar</span>
+                            <span class="align-middle">{{ __('auth.logout') }}</span>
                         </a>
                     </li>
                 </ul>

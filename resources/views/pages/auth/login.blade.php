@@ -15,27 +15,27 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Welcome to {{ config('app.name') }}! 👋</h4>
-            <p class="mb-4">Silakan masuk ke akunmu dan kita lanjutkan perjalanan.</p>
+            <h4 class="mb-2">{{ __('label.welcome_to', ['app' => config('app.name')]) }}! 👋</h4>
+            <p class="mb-4">{{ __('label.please_log_in_to_your_account') }}</p>
 
             <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
               @csrf
               <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">{{ __('field.email') }}</label>
                 <input
                   type="email"
                   class="form-control @error('email') is-invalid @enderror"
                   id="email"
                   name="email"
-                  placeholder="Masukkan email"
+                  placeholder="{{ __('label.enter_field', ['field' => __('field.email')]) }}"
                   autofocus />
                 <span class="error invalid-feedback">{{ $errors->first('email') }}</span>
               </div>
               <div class="mb-3 form-password-toggle">
                 <div class="d-flex justify-content-between">
-                  <label class="form-label" for="password">Password</label>
+                  <label class="form-label" for="password">{{ __('field.password') }}</label>
                   <a href="{{ route('password.request') }}">
-                    <small>Lupa Password?</small>
+                    <small>{{ __('label.forgot_password') }}</small>
                   </a>
                 </div>
                 <div class="input-group input-group-merge">
@@ -53,18 +53,18 @@
               <div class="mb-3">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="remember" name="remember" />
-                  <label class="form-check-label" for="remember"> Ingat Saya </label>
+                  <label class="form-check-label" for="remember"> {{ __('label.remember_me') }} </label>
                 </div>
               </div>
               <div class="mb-3">
-                <button class="btn btn-primary d-grid w-100" type="submit">Masuk</button>
+                <button class="btn btn-primary d-grid w-100" type="submit">{{ __('button.login') }}</button>
               </div>
             </form>
 
             <p class="text-center">
-              <span>Belum punya akun?</span>
+              <span>{{ __('label.dont_have_an_account') }}</span>
               <a href="{{ route('register') }}">
-                <span>Buat akun</span>
+                <span>{{ __('label.create_an_account') }}</span>
               </a>
             </p>
           </div>

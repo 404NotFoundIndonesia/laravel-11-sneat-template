@@ -2,23 +2,23 @@
   "menu": [
     {
       "url": "dashboard",
-      "name": "Dashboard",
+      "name": "menu.dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard"
     },
     {
-      "name": "Akun",
+      "name": "menu.account",
       "icon": "menu-icon tf-icons bx bx bx-user",
       "slug": "account.*",
       "submenu": [
         {
           "url": "account.profile.edit",
-          "name": "Profil",
+          "name": "menu.profile",
           "slug": "account.profile.edit"
         },
         {
           "url": "account.password.edit",
-          "name": "Ganti Password",
+          "name": "menu.change_password",
           "slug": "account.password.edit"
         }
       ]
