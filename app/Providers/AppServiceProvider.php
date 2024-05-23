@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -31,5 +32,7 @@ class AppServiceProvider extends ServiceProvider
         // Share all menuData to all the views
         View::share('menuData', $verticalMenuData);
         View::share('languages', config('app.available_locales'));
+
+        Paginator::useBootstrapFive();
     }
 }
