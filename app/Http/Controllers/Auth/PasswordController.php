@@ -12,7 +12,8 @@ use Illuminate\View\View;
 
 class PasswordController extends Controller
 {
-    public function edit(Request $request): View {
+    public function edit(Request $request): View
+    {
         return view('pages.account.change-password');
     }
 

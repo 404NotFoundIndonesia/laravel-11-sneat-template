@@ -25,7 +25,7 @@ class ProfileUpdateRequest extends FormRequest
     {
         return [
             'name' => __('field.name'),
-            'email' => __('field.email')
+            'email' => __('field.email'),
         ];
     }
 }

@@ -13,7 +13,7 @@ class UpdatePasswordRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return !auth()->guest();
+        return ! auth()->guest();
     }
 
     /**

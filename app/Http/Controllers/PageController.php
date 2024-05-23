@@ -9,16 +9,19 @@ use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    public function welcome(Request $request): View {
+    public function welcome(Request $request): View
+    {
         return view('welcome');
     }
 
-    public function dashboard(Request $request): View {
+    public function dashboard(Request $request): View
+    {
         return view('pages.dashboard');
     }
 
-    public function locale(Request $request): RedirectResponse {
-        $locale = $request->locale;
+    public function locale(Request $request): RedirectResponse
+    {
+        $locale = $request->query('locale');
         if (in_array($locale, array_keys(config('app.available_locales')))) {
             $request->user()->update(['locale' => $locale]);
             session(['locale' => $locale]);

@@ -19,4 +19,3 @@ return [
     'token' => 'Token reset kata sandi ini tidak valid.',
     'user' => 'Kami tidak dapat menemukan pengguna dengan alamat email tersebut.',
 ];
-

@@ -22,7 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'locale'
+        'locale',
     ];
 
     /**
@@ -52,9 +52,10 @@ class User extends Authenticatable
         ];
     }
 
-    public function avatarUrl(): Attribute {
+    public function avatarUrl(): Attribute
+    {
         return new Attribute(
-            get: fn() => 'https://ui-avatars.com/api/?name=' . $this->name,
+            get: fn () => 'https://ui-avatars.com/api/?name='.$this->name,
         );
     }
 }

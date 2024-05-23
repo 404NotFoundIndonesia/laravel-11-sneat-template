@@ -10,10 +10,10 @@ return [
     | Header Menu or tables on database
     |
     */
-    
+
     'dashboard' => 'Dasbor',
     'account' => 'Akun',
     'profile' => 'Profil',
     'change_password' => 'Ganti Password',
-    'locale' => 'Bahasa'
+    'locale' => 'Bahasa',
 ];
