@@ -1,0 +1,65 @@
+services:
+
+    web:
+        build:
+            context: ./.docker/php
+            dockerfile: Dockerfile
+            network: host
+        image: laravel-11-sneat-template
+        ports:
+            - 5173:5173
+        volumes:
+            - .:/var/www:cached
+
+    queue:
+        image: laravel-11-sneat-template
+        restart: always
+        depends_on:
+            - web
+        volumes:
+            - .:/var/www
+        command: php artisan queue:work
+
+    schedule:
+        image: laravel-11-sneat-template
+        restart: always
+        depends_on:
+            - web
+        volumes:
+            - .:/var/www
+        command: php artisan schedule:run
+
+    nginx:
+        image: nginx
+        restart: always
+        ports:
+            - 80:80
+        volumes:
+            - .:/var/www
+            - .docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - .docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+        depends_on:
+            - web
+
+    db:
+        image: mysql:8.1
+        restart: always
+        ports:
+            - 3306:3306
+        volumes:
+            - .docker/db/data:/var/lib/mysql
+            - .docker/logs:/var/log/mysql
+            - .docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+            - .docker/db/sql:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: laravel11sneattemplate
+            MYSQL_USER: laravel11sneattemplate
+            MYSQL_PASSWORD: laravel11sneattemplate
+
+    redis:
+        image: redis:latest
+        restart: always
+        command: redis-server --appendonly yes
+        volumes:
+        - .docker/redis/data:/data

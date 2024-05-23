@@ -22,8 +22,20 @@ This is a Laravel 11 template designed to accelerate web application development
 - Delete Account
 - Localization (Bahasa Indonesia, English)
 
+## Get Started with Docker
 
-## Get Started
+__First time only!__ Run the following command:
+
+```shell
+docker compose up -d --build
+```
+From the second time onwards, run the following command to start the services:
+
+```shell
+docker compose up -d
+```
+
+## Get Started Manually
 
 ### Get the Source Code
 Of course, you need to put this code on your computer first. There are two ways to do this: by __downloading the project zip file__ or __by using Git (recommended)__.
