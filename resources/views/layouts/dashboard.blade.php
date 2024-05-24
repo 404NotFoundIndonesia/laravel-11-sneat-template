@@ -56,12 +56,12 @@
     function confirmSubmit(e, form) {
         e.preventDefault();
         Swal.fire({
-            title: 'Perhatian',
-            text: 'Apakah Anda yakin?',
+            title: "{{ __('label.warning') }}",
+            text: "{{ __('label.are_you_sure') }}",
             icon: 'question',
             showCancelButton: true,
-            confirmButtonText: 'Iya, saya yakin!',
-            cancelButtonText: 'Batalkan'
+            confirmButtonText: "{{ __('label.yes_i_am') }}",
+            cancelButtonText: "{{ __('label.cancel') }}",
         }).then((result) => {
             if (result.isConfirmed) {
                 form.submit();

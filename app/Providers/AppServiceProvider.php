@@ -33,6 +33,6 @@ class AppServiceProvider extends ServiceProvider
         View::share('menuData', $verticalMenuData);
         View::share('languages', config('app.available_locales'));
 
-        Paginator::useBootstrapFive();
+        Paginator::defaultView('components.pagination');
     }
 }

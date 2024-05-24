@@ -20,4 +20,13 @@ return [
     'enter_your_email_to_reset_password' => 'Masukkan email kamu dan akan kami kirimkan link buat reset password kamu',
     'reset_password' => 'Reset Password',
     'please_enter_your_new_password' => 'Silakan masukkan password baru kamu',
+    'search' => 'Cari...',
+    'edit' => 'Edit',
+    'delete' => 'Hapus',
+    'warning' => 'Peringatan',
+    'are_you_sure' => 'Apakah Anda yakin?',
+    'yes_i_am' => 'Iya, saya yakin!',
+    'cancel' => 'Batalkan',
+    'new' => 'Baru',
+    'detail' => 'Detail',
 ];

@@ -20,4 +20,13 @@ return [
     'enter_your_email_to_reset_password' => 'Enter your email and we will send you a link to reset your password.',
     'reset_password' => 'Reset password',
     'please_enter_your_new_password' => 'Please enter your new password.',
+    'search' => 'Search...',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'warning' => 'Warning',
+    'are_you_sure' => 'Are you sure?',
+    'yes_i_am' => 'Yes, I am!',
+    'cancel' => 'Cancel',
+    'new' => 'New',
+    'detail' => 'Detail',
 ];
