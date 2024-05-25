@@ -17,7 +17,7 @@
         @foreach ($menuData->menu as $menu)
             @if (isset($menu->menuHeader))
                 <li class="menu-header small text-uppercase">
-                    <span class="menu-header-text">a{{ __($menu->menuHeader) }}</span>
+                    <span class="menu-header-text">{{ __($menu->menuHeader) }}</span>
                 </li>
             @else
                 <li class="menu-item {{ Route::is($menu->slug) ? 'active open' : '' }}">
