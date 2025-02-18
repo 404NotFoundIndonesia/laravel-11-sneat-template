@@ -7,8 +7,10 @@
             <div>
                 <a href="{{ route('user.index') }}"
                    class="btn btn-outline-secondary">{{ __('button.back') }}</a>
+                @can('edit_user')
                 <a href="{{ route('user.edit', $item->id) }}"
                    class="btn btn-primary">{{ __('button.edit') }}</a>
+                @endcan
             </div>
         </div>
         <div class="card-body">
