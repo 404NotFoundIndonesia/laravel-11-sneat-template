@@ -29,5 +29,5 @@ return [
     'cancel' => 'Batalkan',
     'new' => 'Baru',
     'detail' => 'Detail',
-    'you_wont_be_able_to_revert_this' => "Aksi ini tidak dapat dibatalkan!",
+    'you_wont_be_able_to_revert_this' => 'Aksi ini tidak dapat dibatalkan!',
 ];

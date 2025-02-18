@@ -30,9 +30,9 @@ abstract class Controller
                         'url' => route('account.password.edit'),
                         'name' => __('menu.change_password'),
                         'active' => Route::is('account.password.edit'),
-                    ]
+                    ],
                 ],
-            ]
+            ],
         ]);
     }
 
