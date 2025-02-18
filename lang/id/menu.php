@@ -16,4 +16,8 @@ return [
     'profile' => 'Profil',
     'change_password' => 'Ganti Password',
     'locale' => 'Bahasa',
+    'user_management' => 'Pengelolaan Pengguna',
+    'user' => 'Pengguna',
+    'role' => 'Peran dan Hak Akses',
+    'my_setting' => 'Pengaturan Saya',
 ];

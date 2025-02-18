@@ -4,6 +4,7 @@
            type="{{ $attributes['type'] ?? 'text' }}"
            id="{{ $attributes['name'] }}"
            name="{{ $attributes['name'] }}"
+           @if(isset($attributes['autofocus'])) autofocus @endif
            value="{{ old($attributes['name'], $attributes['value']) }}"
            placeholder="{{ __('label.enter_field', ['field' => __('field.' . $attributes['name'])]) }}" />
     <span class="error invalid-feedback">{{ $errors->first($attributes['name']) }}</span>

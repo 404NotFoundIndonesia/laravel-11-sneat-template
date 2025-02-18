@@ -10,6 +10,9 @@ return [
     'login' => 'Masuk',
     'register' => 'Buat Akun',
     'delete_permanently' => 'Hapus Akun Permanen',
+    'new_feature' => ':Feature Baru',
+    'import_feature' => 'Impor :Feature',
     'delete' => 'Hapus',
+    'edit' => 'Edit',
 
 ];

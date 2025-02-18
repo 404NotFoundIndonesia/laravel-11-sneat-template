@@ -30,4 +30,13 @@ return [
     'new' => 'Baru',
     'detail' => 'Detail',
     'you_wont_be_able_to_revert_this' => 'Aksi ini tidak dapat dibatalkan!',
+    'module' => 'Modul',
+    'action_view' => 'Lihat',
+    'action_create' => 'Buat',
+    'action_edit' => 'Edit',
+    'action_delete' => 'Hapus',
+    'action_export' => 'Ekspor',
+    'action_import' => 'Impor',
+    'resource_user' => 'Pengguna',
+    'resource_role' => 'Peran',
 ];

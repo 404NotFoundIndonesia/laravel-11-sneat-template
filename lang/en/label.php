@@ -30,4 +30,13 @@ return [
     'new' => 'New',
     'detail' => 'Detail',
     'you_wont_be_able_to_revert_this' => 'You will not be able to revert this!',
+    'module' => 'Module',
+    'action_view' => 'View',
+    'action_create' => 'Create',
+    'action_edit' => 'Edit',
+    'action_delete' => 'Delete',
+    'action_export' => 'Export',
+    'action_import' => 'Import',
+    'resource_user' => 'User',
+    'resource_role' => 'Role',
 ];

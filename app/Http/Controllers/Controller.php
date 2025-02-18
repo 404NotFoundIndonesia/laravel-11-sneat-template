@@ -17,6 +17,21 @@ abstract class Controller
                 'active' => Route::is('dashboard'),
             ],
             [
+                'name' => __('menu.user_management'),
+                'icon' => 'bx-briefcase-alt-2',
+                'active' => Route::is('role.*') || Route::is('user.*'),
+                'submenu' => [
+                    [
+                        'url' => route('role.index'),
+                        'name' => __('menu.role'),
+                        'active' => Route::is('role.*'),
+                    ],
+                ],
+            ],
+            [
+                'header' => __('menu.my_setting'),
+            ],
+            [
                 'name' => __('menu.account'),
                 'icon' => 'bx-user',
                 'active' => Route::is('account.*'),
