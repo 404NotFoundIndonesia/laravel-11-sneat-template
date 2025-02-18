@@ -22,6 +22,11 @@ abstract class Controller
                 'active' => Route::is('role.*') || Route::is('user.*'),
                 'submenu' => [
                     [
+                        'url' => route('user.index'),
+                        'name' => __('menu.user'),
+                        'active' => Route::is('user.*'),
+                    ],
+                    [
                         'url' => route('role.index'),
                         'name' => __('menu.role'),
                         'active' => Route::is('role.*'),

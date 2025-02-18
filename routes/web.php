@@ -17,6 +17,14 @@ Route::middleware(['locale'])->group(function () {
 
         });
 
+        Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+        Route::get('/user/create', [\App\Http\Controllers\UserController::class, 'create'])->name('user.create');
+        Route::post('/user', [\App\Http\Controllers\UserController::class, 'store'])->name('user.store');
+        Route::get('/user/{user}', [\App\Http\Controllers\UserController::class, 'show'])->name('user.show');
+        Route::get('/user/{user}/edit', [\App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+        Route::patch('/user/{user}', [\App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+        Route::delete('/user/{user}', [\App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy');
+
         Route::get('/role', [\App\Http\Controllers\RoleController::class, 'index'])->name('role.index');
         Route::get('/role/create', [\App\Http\Controllers\RoleController::class, 'create'])->name('role.create');
         Route::post('/role', [\App\Http\Controllers\RoleController::class, 'store'])->name('role.store');
