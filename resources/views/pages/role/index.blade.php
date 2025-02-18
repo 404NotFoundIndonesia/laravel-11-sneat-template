@@ -5,7 +5,9 @@
         <div class="card-header d-flex justify-content-between">
             <h5>{{ __('menu.role') }}</h5>
             <div>
+                @can('create_role')
                 <a href="{{ route('role.create') }}" class="btn btn-primary">{{ __('button.new_feature', ['feature' => __('menu.role')]) }}</a>
+                @endcan
             </div>
         </div>
         <div class="table-responsive text-nowrap">
@@ -23,11 +25,15 @@
                             <a href="{{ route('role.show', $item->id) }}">{{ $item->name }}</a>
                         </td>
                         <td>
+                            @canany(['edit_role', 'delete_role'])
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                                 <div class="dropdown-menu">
+                                    @can('edit_role')
                                     <a class="dropdown-item" href="{{ route('role.edit', $item->id) }}"><i class="bx bx-edit-alt me-1"></i>
                                         {{ __('button.edit') }}</a>
+                                    @endcan
+                                    @can('delete_role')
                                     <form action="{{ route('role.destroy', $item->id) }}" method="post" class="delete-form">
                                         @csrf
                                         @method('DELETE')
@@ -36,8 +42,10 @@
                                             {{ __('button.delete') }}
                                         </button>
                                     </form>
+                                    @endcan
                                 </div>
                             </div>
+                            @endcanany
                         </td>
                     </tr>
                 @endforeach

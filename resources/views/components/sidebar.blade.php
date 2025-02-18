@@ -15,6 +15,8 @@
 
     <ul class="menu-inner py-1">
         @foreach ($menus as $menu)
+            @continue(!$menu['available'])
+
             @if (isset($menu['header']))
                 <li class="menu-header small text-uppercase">
                     <span class="menu-header-text">{{ __($menu['header']) }}</span>
@@ -35,6 +37,7 @@
                     @isset($menu['submenu'])
                         <ul class="menu-sub">
                             @foreach ($menu['submenu'] as $submenu)
+                                @continue(!$submenu['available'])
                                 <li class="menu-item {{ $submenu['active'] ? 'active open' : '' }}">
                                     <a href="{{ $submenu['url'] ?? 'javascript:void(0)' }}" class="{{ isset($submenu['submenu']) ? 'menu-link menu-toggle' : 'menu-link' }}" @if (isset($submenu['target']) and !empty($submenu['target'])) target="_blank" @endif>
                                         @if (isset($submenu['icon']))

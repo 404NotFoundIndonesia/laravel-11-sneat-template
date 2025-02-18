@@ -5,7 +5,9 @@
         <div class="card-header d-flex justify-content-between">
             <h5>{{ __('menu.user') }}</h5>
             <div>
+                @can('create_user')
                 <a href="{{ route('user.create') }}" class="btn btn-primary">{{ __('button.new_feature', ['feature' => __('menu.user')]) }}</a>
+                @endcan
             </div>
         </div>
         <div class="table-responsive text-nowrap">
@@ -35,11 +37,15 @@
                             @endforeach
                         </td>
                         <td>
+                            @canany(['edit_user', 'delete_user'])
                             <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></button>
                                 <div class="dropdown-menu">
+                                    @can('edit_user')
                                     <a class="dropdown-item" href="{{ route('user.edit', $item->id) }}"><i class="bx bx-edit-alt me-1"></i>
                                         {{ __('button.edit') }}</a>
+                                    @endcan
+                                    @can('delete_user')
                                     <form action="{{ route('user.destroy', $item->id) }}" method="post" class="delete-form">
                                         @csrf
                                         @method('DELETE')
@@ -48,8 +54,10 @@
                                             {{ __('button.delete') }}
                                         </button>
                                     </form>
+                                    @endcan
                                 </div>
                             </div>
+                            @endcanany
                         </td>
                     </tr>
                 @endforeach
