@@ -16,4 +16,8 @@ return [
     'profile' => 'Profile',
     'change_password' => 'Change Password',
     'locale' => 'Language',
+    'user_management' => 'User Management',
+    'user' => 'User',
+    'role' => 'Role & Permission',
+    'my_setting' => 'My Settings',
 ];

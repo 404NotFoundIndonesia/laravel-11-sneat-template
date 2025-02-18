@@ -17,4 +17,6 @@ return [
     'password' => 'Password',
     'password_confirmation' => 'Password Confirmation',
     'current_password' => 'Current Password',
+    'role' => 'Role',
+    'permission' => 'Permission',
 ];

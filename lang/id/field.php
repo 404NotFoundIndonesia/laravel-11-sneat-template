@@ -17,4 +17,6 @@ return [
     'password' => 'Password',
     'password_confirmation' => 'Konfirmasi Password',
     'current_password' => 'Password Sekarang',
+    'role' => 'Peran',
+    'permission' => 'Hak Akses',
 ];

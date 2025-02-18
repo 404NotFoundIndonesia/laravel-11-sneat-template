@@ -17,6 +17,22 @@ Route::middleware(['locale'])->group(function () {
 
         });
 
+        Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user.index')->can('view_user');
+        Route::get('/user/create', [\App\Http\Controllers\UserController::class, 'create'])->name('user.create')->can('create_user');
+        Route::post('/user', [\App\Http\Controllers\UserController::class, 'store'])->name('user.store')->can('create_user');
+        Route::get('/user/{user}', [\App\Http\Controllers\UserController::class, 'show'])->name('user.show')->can('view_user');
+        Route::get('/user/{user}/edit', [\App\Http\Controllers\UserController::class, 'edit'])->name('user.edit')->can('edit_user');
+        Route::patch('/user/{user}', [\App\Http\Controllers\UserController::class, 'update'])->name('user.update')->can('edit_user');
+        Route::delete('/user/{user}', [\App\Http\Controllers\UserController::class, 'destroy'])->name('user.destroy')->can('delete_user');
+
+        Route::get('/role', [\App\Http\Controllers\RoleController::class, 'index'])->name('role.index')->can('view_role');
+        Route::get('/role/create', [\App\Http\Controllers\RoleController::class, 'create'])->name('role.create')->can('create_role');
+        Route::post('/role', [\App\Http\Controllers\RoleController::class, 'store'])->name('role.store')->can('create_role');
+        Route::get('/role/{role}', [\App\Http\Controllers\RoleController::class, 'show'])->name('role.show')->can('view_role');
+        Route::get('/role/{role}/edit', [\App\Http\Controllers\RoleController::class, 'edit'])->name('role.edit')->can('edit_role');
+        Route::patch('/role/{role}', [\App\Http\Controllers\RoleController::class, 'update'])->name('role.update')->can('edit_role');
+        Route::delete('/role/{role}', [\App\Http\Controllers\RoleController::class, 'destroy'])->name('role.destroy')->can('delete_role');
+
         Route::as('account.')->group(function () {
             Route::get('/account/profile', [ProfileController::class, 'edit'])->name('profile.edit');
             Route::patch('/account/profile', [ProfileController::class, 'update'])->name('profile.update');
