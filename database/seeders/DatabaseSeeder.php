@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $permissions = [];
         foreach (PermissionResource::cases() as $resource) {
             foreach (PermissionAction::cases() as $action) {
-                $permissions[] = $action->value . '_' . $resource->value;
+                $permissions[] = $action->value.'_'.$resource->value;
             }
         }
 

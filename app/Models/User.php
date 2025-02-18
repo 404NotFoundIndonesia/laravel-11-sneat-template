@@ -13,7 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, HasRoles, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -60,10 +60,11 @@ class User extends Authenticatable
             get: fn () => 'https://ui-avatars.com/api/?name='.$this->name,
         );
     }
+
     public function scopeSearch(Builder $query, ?string $search)
     {
         return $query->when($search, function (Builder $query, string $search) {
-            return $query->where('name', 'LIKE', $search . '%');
+            return $query->where('name', 'LIKE', $search.'%');
         });
     }
 

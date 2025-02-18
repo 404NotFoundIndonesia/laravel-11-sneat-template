@@ -10,8 +10,9 @@ abstract class Controller
     public function __construct()
     {
         $user = auth()->user();
-        if (!$user)
+        if (! $user) {
             return;
+        }
 
         View::share('menus', [
             [

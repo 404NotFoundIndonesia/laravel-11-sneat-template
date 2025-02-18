@@ -32,7 +32,7 @@ class UserController extends Controller
     public function create(): View
     {
         return view('pages.user.create', [
-            'roles' => Role::all()->map(fn($r) => [$r->name, $r->name]),
+            'roles' => Role::all()->map(fn ($r) => [$r->name, $r->name]),
         ]);
     }
 
@@ -71,6 +71,7 @@ class UserController extends Controller
     public function show(User $user): View
     {
         $user->load(['roles']);
+
         return view('pages.user.show', [
             'item' => $user,
         ]);
@@ -82,8 +83,9 @@ class UserController extends Controller
     public function edit(User $user): View
     {
         $user->load(['roles']);
+
         return view('pages.user.edit', [
-            'roles' => Role::all()->map(fn($r) => [$r->name, $r->name]),
+            'roles' => Role::all()->map(fn ($r) => [$r->name, $r->name]),
             'item' => $user,
         ]);
     }
