@@ -35,6 +35,7 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.min.css') }}" />
 
     <!-- Page CSS -->
     @stack('style')
@@ -59,12 +60,34 @@
     <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('assets/vendor/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
 
     <!-- endbuild -->
 
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script>
+        document.querySelectorAll("form.delete-form").forEach(form => {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                Swal.fire({
+                    title: '{{ __('label.are_you_sure') }}',
+                    text: "{{ __('label.you_wont_be_able_to_revert_this') }}",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#696cff",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: '{{ __('button.delete') }}',
+                    cancelButtonText: '{{ __('button.cancel') }}',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        event.target.submit();
+                    }
+                });
+            });
+        });
+    </script>
     @stack('script')
 
     <!-- Place this tag in your head or just before your close body tag. -->

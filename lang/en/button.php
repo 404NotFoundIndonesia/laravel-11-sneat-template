@@ -10,5 +10,6 @@ return [
     'login' => 'Sign In',
     'register' => 'Sign Up',
     'delete_permanently' => 'Delete My Account',
+    'delete' => 'Delete',
 
 ];

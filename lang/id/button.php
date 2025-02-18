@@ -10,5 +10,6 @@ return [
     'login' => 'Masuk',
     'register' => 'Buat Akun',
     'delete_permanently' => 'Hapus Akun Permanen',
+    'delete' => 'Hapus',
 
 ];

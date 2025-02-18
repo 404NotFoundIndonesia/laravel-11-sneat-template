@@ -29,4 +29,5 @@ return [
     'cancel' => 'Cancel',
     'new' => 'New',
     'detail' => 'Detail',
+    'you_wont_be_able_to_revert_this' => 'You will not be able to revert this!',
 ];
