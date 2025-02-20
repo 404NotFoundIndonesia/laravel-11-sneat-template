@@ -14,5 +14,6 @@ return [
     'import_feature' => 'Impor :Feature',
     'delete' => 'Hapus',
     'edit' => 'Edit',
+    'delete_all' => 'Hapus Semua',
 
 ];

@@ -33,12 +33,16 @@ Route::middleware(['locale'])->group(function () {
         Route::patch('/role/{role}', [\App\Http\Controllers\RoleController::class, 'update'])->name('role.update')->can('edit_role');
         Route::delete('/role/{role}', [\App\Http\Controllers\RoleController::class, 'destroy'])->name('role.destroy')->can('delete_role');
 
-        Route::as('account.')->group(function () {
-            Route::get('/account/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-            Route::patch('/account/profile', [ProfileController::class, 'update'])->name('profile.update');
-            Route::delete('/account/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-            Route::get('/account/change-password', [PasswordController::class, 'edit'])->name('password.edit');
-            Route::get('/account/change-language', [PageController::class, 'locale'])->name('locale');
+        Route::as('account.')->prefix('account')->group(function () {
+            Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+            Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+            Route::get('/change-password', [PasswordController::class, 'edit'])->name('password.edit');
+            Route::get('/change-language', [PageController::class, 'locale'])->name('locale');
+
+            Route::get('/activity-log', [\App\Http\Controllers\ActivityLogController::class, 'index'])->name('log.index');
+            Route::delete('/activity-log', [\App\Http\Controllers\ActivityLogController::class, 'destroyBulk'])->name('log.destroy.bulk');
+            Route::delete('/activity-log/{log}', [\App\Http\Controllers\ActivityLogController::class, 'destroy'])->name('log.destroy');
         });
     });
 

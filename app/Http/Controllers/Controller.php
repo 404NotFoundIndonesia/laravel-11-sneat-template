@@ -64,6 +64,12 @@ abstract class Controller
                         'active' => Route::is('account.password.edit'),
                         'available' => true,
                     ],
+                    [
+                        'url' => route('account.log.index'),
+                        'name' => __('menu.activity_log'),
+                        'active' => Route::is('account.log.index'),
+                        'available' => true,
+                    ],
                 ],
             ],
         ]);
