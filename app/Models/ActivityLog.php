@@ -9,7 +9,7 @@ use Spatie\Activitylog\Models\Activity;
 class ActivityLog extends Activity
 {
     protected $appends = [
-        'module'
+        'module',
     ];
 
     public function module(): Attribute
@@ -17,8 +17,9 @@ class ActivityLog extends Activity
         return new Attribute(
             get: function () {
                 $module = strtolower($this->log_name);
-                $module = basename(str_replace("\\", "/", $module));
-                return __('menu.' . $module);
+                $module = basename(str_replace('\\', '/', $module));
+
+                return __('menu.'.$module);
             }
         );
     }

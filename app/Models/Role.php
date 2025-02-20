@@ -31,7 +31,7 @@ class Role extends \Spatie\Permission\Models\Role
             ])
             ->logOnlyDirty()
             ->dontSubmitEmptyLogs()
-            ->setDescriptionForEvent(fn(string $eventName) => match ($eventName) {
+            ->setDescriptionForEvent(fn (string $eventName) => match ($eventName) {
                 'created' => __('activity.created', [
                     'menu' => __('menu.role'),
                     'identifier' => $this->name,
