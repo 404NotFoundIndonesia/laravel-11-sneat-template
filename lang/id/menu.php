@@ -20,4 +20,5 @@ return [
     'user' => 'Pengguna',
     'role' => 'Peran dan Hak Akses',
     'my_setting' => 'Pengaturan Saya',
+    'activity_log' => 'Riwayat Aktivitas',
 ];

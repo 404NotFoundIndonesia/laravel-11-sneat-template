@@ -20,4 +20,5 @@ return [
     'user' => 'User',
     'role' => 'Role & Permission',
     'my_setting' => 'My Settings',
+    'activity_log' => 'Activity Log',
 ];

@@ -14,5 +14,6 @@ return [
     'import_feature' => 'Import :Feature',
     'delete' => 'Delete',
     'edit' => 'Edit',
+    'delete_all' => 'Delete All',
 
 ];

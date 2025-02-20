@@ -19,4 +19,10 @@ return [
     'current_password' => 'Current Password',
     'role' => 'Role',
     'permission' => 'Permission',
+    'module' => 'Module',
+    'description' => 'Description',
+    'created_at' => 'Created At',
+    'updated_at' => 'Updated At',
+    'deleted_at' => 'Deleted At',
+    'timestamp' => 'Timestamp',
 ];
