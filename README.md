@@ -21,6 +21,8 @@ This is a Laravel 11 template designed to accelerate web application development
 - Change Password
 - Delete Account
 - Localization (Bahasa Indonesia, English)
+- Role and Permission
+- Activity Log
 
 ## Get Started with Docker
 
@@ -63,11 +65,44 @@ To install backend dependencies, use the following command:
 composer setup
 ```
 
+## Credentials
+
+You can login with the following account as `owner`:
+- email: `test@example.com`
+- password: `password`
+
+## Screenshots
+
+### Login Page
+<img src="docs/login.png" >
+
+### Registration Page
+<img src="docs/register.png" >
+
+### Dashboard Page
+<img src="docs/dashboard.png" >
+
+### Profile Page
+<img src="docs/account_profile.png" >
+
+### Change Password Page
+<img src="docs/account_change-password.png" >
+
+### Activity Log Page
+<img src="docs/account_activity-log.png" >
+
+### Users Page
+<img src="docs/user.png" >
+
+### Roles Page
+<img src="docs/role.png" >
+<img src="docs/role_2_edit.png" >
+
 ## Reference
 
 - [Laravel](https://github.com/laravel/laravel)
 - [Breeze](https://github.com/laravel/breeze)
-- [Sneat](https://github.com/themeselection/sneat-bootstrap-html-admin-template-free)
+- [Sneat Template](https://github.com/themeselection/sneat-bootstrap-html-admin-template-free)
 
 ## License
 
