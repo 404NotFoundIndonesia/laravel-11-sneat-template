@@ -22,7 +22,7 @@
                         <x-forms.input name="email" type="email" disabled :value="$item->email" />
                     </div>
                     <div class="mb-3 col-md-12">
-                        <x-forms.input-select2 name="role" :options="$roles" :value="$item->roles[0]?->name" />
+                        <x-forms.input-select2 name="role" :options="$roles" :value="$item->roles[0]?->name ?? null" />
                     </div>
                 </div>
             </div>
